@@ -74,8 +74,9 @@ public class Main {
     }
 
     private static boolean validatePassword(String password) {
-        // Check if the password has a minimum of 8 characters, at least 1 uppercase letter, and at least 1 numeric digit
-        return password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*\\d.*");
+        // Check if the password has a minimum of 8 characters, at least 1 uppercase letter, at least 1 numeric digit, and exactly 1 special character
+        return password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*\\d.*") && password.matches(".*[^a-zA-Z0-9].*");
     }
+
 
 }
