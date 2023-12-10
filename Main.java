@@ -58,7 +58,7 @@ public class Main {
         if (validatePassword(password)) {
             System.out.println("Valid password!");
         } else {
-            System.out.println("Invalid password. Please make sure it has a minimum of 8 characters.");
+            System.out.println("Invalid password. Please make sure it has a minimum of 8 characters and at least 1 uppercase letter.");
         }
     }
 
@@ -74,7 +74,7 @@ public class Main {
     }
 
     private static boolean validatePassword(String password) {
-        // Check if the password has a minimum of 8 characters
-        return password.length() >= 8;
+        // Check if the password has a minimum of 8 characters and at least 1 uppercase letter
+        return password.length() >= 8 && password.matches(".*[A-Z].*");
     }
 }
