@@ -48,6 +48,17 @@ public class Main {
             System.out.println("Valid mobile number!");
         } else {
             System.out.println("Invalid mobile number. Please make sure it follows the specified format (e.g., 91 9919819801).");
+            return; // Exit if the mobile number is invalid
+        }
+
+        // Validate Password
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+
+        if (validatePassword(password)) {
+            System.out.println("Valid password!");
+        } else {
+            System.out.println("Invalid password. Please make sure it has a minimum of 8 characters.");
         }
     }
 
@@ -60,5 +71,10 @@ public class Main {
 
         // Check if the input matches the pattern
         return matcher.matches();
+    }
+
+    private static boolean validatePassword(String password) {
+        // Check if the password has a minimum of 8 characters
+        return password.length() >= 8;
     }
 }
