@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class UserValidator {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -37,6 +37,17 @@ public class UserValidator {
             System.out.println("Valid email address!");
         } else {
             System.out.println("Invalid email address. Please make sure it follows the specified format.");
+            return; // Exit if the email is invalid
+        }
+
+        // Validate Mobile Number
+        System.out.print("Enter your mobile number (e.g., 91 9919819801): ");
+        String mobileNumber = scanner.nextLine();
+
+        if (validateInput(mobileNumber, "^\\d{2} \\d{10}$")) {
+            System.out.println("Valid mobile number!");
+        } else {
+            System.out.println("Invalid mobile number. Please make sure it follows the specified format (e.g., 91 9919819801).");
         }
     }
 
